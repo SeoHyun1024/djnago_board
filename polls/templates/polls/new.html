@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new board</title>
+</head>
+<body>
+    <form action="{% url 'create' %} " method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="title"><h1>TITLE</h1></label>
+            <input type="text" name = "title" id = "title" width="200" height="50"><br>
+        </div><br>
+        <div>
+            <label for="body">CONTENT</label><br>
+            <textarea name="body" id="body" cols="100" rows="20" ></textarea>
+        </div>
+        <input type="submit" value = "보드 만들기">
+
+    </form>
+</body>
+</html>

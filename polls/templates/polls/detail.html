@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>detail</title>
+</head>
+<body>
+    <h1>제목:  {{ board_detail.title }}</h1>
+
+    <h4>{{ board_detail.date }}</h4>
+
+    <h5>본문</h5>
+    {{ board_detail.body }}
+
+    {% if board_detail.photo %}
+        
+        <img src="{{ board_detail.photo.url }}" alt="" height = "300">
+
+        {% endif %}
+
+</body>
+</html>

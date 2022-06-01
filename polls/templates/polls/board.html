@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>board</title>
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <a href="{% url 'home' %}"><h1>My own Board</h1></a>
+
+    <ul type="square">   
+        <li><a href=" {%url 'new' %}">Just write!</a></li>
+        <li><a href=" {%url 'formcreate' %}">Create</a></li>
+        <li><a href=" {%url 'modelformcreate' %}">Make anything!</a></li>
+    </ul>
+    
+    <br>
+    {% if posts %}
+    <ol>
+    {% for post in posts %}
+    <li>
+
+    <a href="{% url 'detail' post.id %}">TITLE : {{ post.title }}</a>
+    <h4>DATE : {{ post.date }}
+        <button><a href="{% url 'delete' post.id %}">delete</a></button>
+    </h4>
+    <br>
+    </li>
+    {% endfor %}
+    
+    {% else %}
+    <p>We don't have a board yet!</p>
+    {% endif %}
+</ol>
+</body>
+</html>
